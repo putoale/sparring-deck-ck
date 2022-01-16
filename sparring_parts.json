@@ -1,0 +1,13 @@
+{
+    "parameterSets": {
+        "prova": {
+            "$fa": "1",
+            "$fs": "0.4",
+            "base_height": "2",
+            "border_thickness": "0.5",
+            "outer_big_size": "22",
+            "outer_small_size": "16"
+        }
+    },
+    "fileFormatVersion": "1"
+}

@@ -1,0 +1,6 @@
+*
+!*.stl
+!*.scad
+!*.json
+!*.md
+!*.gitignore
