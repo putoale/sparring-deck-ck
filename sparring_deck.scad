@@ -3,6 +3,7 @@ use <BOSL/shapes.scad>;
 
 $fa=1;
 $fs = 0.1;
+
 // PARAMETERS
 outer_big_size = 22;
 outer_small_size = 16;
@@ -11,6 +12,9 @@ border_thickness = 0.5;
 
 inner_big_size = outer_big_size - 2 * border_thickness;
 inner_small_size = outer_small_size - 2 * border_thickness;
+
+flat_inner = false;
+flat_outer = true;
 
 base_height = 2;
 
@@ -27,9 +31,9 @@ supp_angle = 25; //angle of teardrop support for column
 //BASE
 //color("light blue"){
     translate([0,0,0.1])
-sparring_base(big_s = inner_big_size,small_s=inner_small_size,height=2.2); //small one
+sparring_base(big_s = inner_big_size,small_s=inner_small_size,height=2.2,flat = flat_inner); //small one
 
-sparring_base(flat=true); //big one
+sparring_base(flat=flat_outer); //big one
 
 //}
 

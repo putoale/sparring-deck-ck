@@ -49,7 +49,7 @@ module sparring_base(big_s = 22, small_s=16,height=2,flat = false) {
             translate([0,0,l1_sq_dh/2])
                 cube([l1,l1,height+l1_sq_dh],center=true);
             
-            color("Black")
+            //color("Black")
             translate([0,0,(l2_sq_dh)/2])
             cube([l2,l2,height+l2_sq_dh],center=true);
         }
@@ -77,3 +77,5 @@ module sparring_column(r_col,h_col,h_supp=1.5,supp_angle=20){
     rotate([90,0,-45])
     teardrop(r=r_col,h=h_supp,ang=supp_angle);
 }
+
+sparring_angle(4,3.7,2);
