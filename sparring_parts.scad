@@ -77,5 +77,3 @@ module sparring_column(r_col,h_col,h_supp=1.5,supp_angle=20){
     rotate([90,0,-45])
     teardrop(r=r_col,h=h_supp,ang=supp_angle);
 }
-
-sparring_angle(4,3.7,2);
