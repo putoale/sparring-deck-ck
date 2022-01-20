@@ -1,6 +1,6 @@
 #!/bin/bash
 
-res=$(jq '.parameterSets | keys| .[]' sparring_deck_old.json)
+res=$(jq '.parameterSets | keys| .[]' sparring_deck.json)
 
 for i in $res; do
 
