@@ -18,24 +18,31 @@ flat_outer = true;
 
 base_height = 2;
 
+border_h = 0.2;
+
 stair_h = 1; //z
 stair_w = outer_big_size-10; //x
 stair_t = 1.5; //y
 
 column_h = 12;
-column_r = 0.65;
+column_r = 0.60;
 
 h_supp = 1.5;    //column support height
 supp_angle = 25; //angle of teardrop support for column
 
 //BASE
-//color("light blue"){
-    translate([0,0,0.1])
-sparring_base(big_s = inner_big_size,small_s=inner_small_size,height=2.2,flat = flat_inner); //small one
+//color("grey"){
+    translate([0,0,border_h/2])
+sparring_base(big_s = inner_big_size,small_s=inner_small_size,height=2+border_h,flat = flat_inner); //small one
 
 sparring_base(flat=flat_outer); //big one
-
 //}
+//color("Brown")
+//translate([0,0,2])
+    //sparring_mask(22,16,0.25,true);
+    //sparring_mask(big_s = inner_big_size,small_s=inner_small_size,height=0.25, cross_l = outer_big_size, flat = true);
+
+
 
 //STAIR
 translate([0,-(outer_big_size/2+stair_t/2),-stair_h/2])

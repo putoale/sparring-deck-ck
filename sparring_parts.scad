@@ -72,6 +72,33 @@ module sparring_base(big_s = 22, small_s=16,height=2,flat = false) {
     
 }
 
+module sparring_mask (big_s = 22, small_s = 16, height=0.25,cross_l=22, flat = true){
+    l1 = 13.2916667;
+    l2 = l1 + (big_s-l1)/2;
+    l_angle = (big_s - small_s)/2;
+    d_angle = (big_s - l2) * sqrt(2) / 2;
+    
+    l2_sq_dh = flat ? 0:0.2;
+    l1_sq_dh = flat ? 0:0; ///
+    
+    difference(){
+        sparring_base(big_s=big_s, small_s=small_s, height=height, flat=flat);
+        
+        difference(){
+            translate([0,0,(l2_sq_dh)/2])
+                cube([l2,l2,height+l2_sq_dh+1],center=true);
+            
+            translate([0,0,l1_sq_dh/2])
+                cube([l1,l1,height+l1_sq_dh+2],center=true);
+
+        }
+    }
+    
+    cube([cross_l,0.5,height],center=true);
+    rotate([0,0,90])
+        cube([cross_l,0.5,height],center=true);
+}
+
 module sparring_column(r_col,h_col,h_supp=1.5,supp_angle=20){
     cylinder(r=r_col,h=h_col);
     rotate([90,0,-45])
