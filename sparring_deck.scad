@@ -5,6 +5,7 @@ $fa=1;
 $fs = 0.1;
 
 // PARAMETERS
+
 outer_big_size = 22;
 outer_small_size = 16;
 
@@ -24,10 +25,11 @@ stair_h = 1; //z
 stair_w = outer_big_size-10; //x
 stair_t = 1.5; //y
 
-column_h = 12;
+column_h = 15;
 column_r = 0.60;
 
-h_supp = 1.5;    //column support height
+h_supp = 2 - 0.2;    //column support height
+
 supp_angle = 25; //angle of teardrop support for column
 
 //BASE
@@ -58,7 +60,7 @@ dist_columns = l2*sqrt(2)/2+column_r;
 
 for (theta = [45:90:45+90*3]) {
 
-    translate([dist_columns*cos(theta),dist_columns*sin(theta),0]){
+    translate([dist_columns*cos(theta),dist_columns*sin(theta),-(2-h_supp)/2]){
         rotate([0,0,theta-45]){
             sparring_column(r_col = column_r,h_col = column_h,h_supp = h_supp, supp_angle = supp_angle);
         }
